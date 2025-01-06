@@ -15,5 +15,10 @@
 		SELECT count(*) FROM membertbl WHERE mid=#{param1} AND mpw=#{param2}
 	</select>
 	
+	<!-- 회원 가입여부 아이디 체크 -->
+	<select id="idCheckDao" resultType="int">		
+		SELECT count(*) FROM membertbl WHERE mid=#{param1}
+	</select>
+	
 </mapper>
     

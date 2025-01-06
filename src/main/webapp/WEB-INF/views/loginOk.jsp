@@ -7,6 +7,9 @@
 <title>로그인 확인</title>
 </head>
 <body>
-	${loginId }님 로그인 성공!!
+	<h2>${loginId }님 로그인 성공!!</h2>
+	<a href="logout">로그아웃</a>
+	<hr>
+	<a href="">게시판 바로가기</a>
 </body>
 </html>
