@@ -20,5 +20,11 @@
 		SELECT count(*) FROM membertbl WHERE mid=#{param1}
 	</select>
 	
+	<!-- 회원 정보 가져오기 -->
+	<select id="memberInfoDao" resultType="com.jbedu.oracle.dto.MemberDto">		
+		SELECT * FROM membertbl WHERE mid=#{param1}
+	</select>
+	
+	
 </mapper>
     
