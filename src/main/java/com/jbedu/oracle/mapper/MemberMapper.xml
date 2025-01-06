@@ -5,5 +5,9 @@
 
 <mapper namespace="com.jbedu.oracle.dao.MemberDao">
 	
+	<insert id="joinMemberDao">
+		INSERT INTO membertbl(mid, mpw, mname, memail, mage) VALUES (#{param1},#{param2},#{param3},#{param4},#{param5})
+	</insert>
+	
 </mapper>
     
