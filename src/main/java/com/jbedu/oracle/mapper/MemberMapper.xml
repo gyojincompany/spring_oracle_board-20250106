@@ -5,9 +5,15 @@
 
 <mapper namespace="com.jbedu.oracle.dao.MemberDao">
 	
+	<!-- 회원 가입 -->
 	<insert id="joinMemberDao">
 		INSERT INTO membertbl(mid, mpw, mname, memail, mage) VALUES (#{param1},#{param2},#{param3},#{param4},#{param5})
 	</insert>
+	
+	<!-- 회원 로그인 -->
+	<select id="loginDao" resultType="int">		
+		SELECT count(*) FROM membertbl WHERE mid=#{param1} AND mpw=#{param2}
+	</select>
 	
 </mapper>
     
