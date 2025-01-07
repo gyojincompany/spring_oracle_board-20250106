@@ -95,6 +95,37 @@ public class BoardController {
 		return "contentView";
 	}
 	
+	@RequestMapping(value = "/modifyOk")
+	public String modifyOk(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");
+		String btitle = request.getParameter("btitle");
+		String bcontent = request.getParameter("bcontent");
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		dao.modifyDao(bnum, btitle, bcontent);
+		
+		return "redirect:list";
+	}
+	
+	@RequestMapping(value = "/content_modify")
+	public String content_modify(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum"); //수정하고자 하는 글의 번호
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		BoardDto bDto = dao.contentDao(bnum); //글 1개 반환
+		
+		model.addAttribute("boardDto", bDto);
+		
+		return "contentModify";
+	}
+	
+	
+	
+	
 	
 
 }
