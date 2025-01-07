@@ -15,4 +15,9 @@
 		SELECT * FROM boardtbl ORDER BY bnum DESC
 	</select>
 	
+	<!-- 글 번호로 게시글 1개 가져오기 -->
+	<select id="contentDao" resultType="com.jbedu.oracle.dto.BoardDto">
+		SELECT * FROM boardtbl WHERE bnum=#{param1}
+	</select>
+	
 </mapper>

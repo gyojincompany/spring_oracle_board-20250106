@@ -72,7 +72,28 @@ public class BoardController {
 		return "boardList";
 	}
 	
-	
+	@RequestMapping(value = "/content_view")
+	public String content_view(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");//유저가 클릭한 게시글의 번호
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		BoardDto bDto = dao.contentDao(bnum); //글 1개 반환
+		
+		if(bDto == null) { //글 삭제되거나 없는 글 번호
+			model.addAttribute("msg", "존재하지 않는 글입니다.");
+			model.addAttribute("url", "list");
+			
+			return "alert";
+		}
+		
+		//System.out.println(bDto);
+		
+		model.addAttribute("boardDto", bDto);
+		
+		return "contentView";
+	}
 	
 	
 
