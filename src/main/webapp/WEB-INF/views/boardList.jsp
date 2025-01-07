@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>게시판 글 리스트</title>
 </head>
-<body>
+<body>	
 	<h2>게시판 글 목록</h2>
 	<hr>
 	<table border="1" cellspacing="0" cellpadding="0" width="800">
@@ -27,6 +27,11 @@
 			<td>${boardDto.bhit}</td>
 		</tr>
 		</c:forEach>
+		<tr>
+			<td colspan="5">
+				<input type="button" value="글쓰기" onclick="javascript:location.href='write_form'">
+			</td>
+		</tr>
 	</table>
 </body>
 </html>

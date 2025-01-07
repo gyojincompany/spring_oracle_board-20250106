@@ -15,7 +15,7 @@
 		글제목 : <input type="text" name="btitle" size="60"><br><br>
 		글내용 : <textarea rows="5" cols="50" name="bcontent"></textarea><br><br>
 		<input type="submit" value="글입력">
-		<input type="button" value="취소">
+		<input type="button" value="취소" onclick="javascript:location.href='list'">
 	</form>
 </body>
 </html>
