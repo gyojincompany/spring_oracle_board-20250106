@@ -30,6 +30,10 @@
 		UPDATE boardtbl SET bhit=bhit+1 WHERE bnum=#{param1}
 	</update>
 	
+	<!-- 글 삭제하기 -->
+	<delete id="deleteDao">
+		DELETE FROM boardtbl WHERE bnum=#{param1} 
+	</delete>
 	
 	
 </mapper>

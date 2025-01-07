@@ -125,7 +125,17 @@ public class BoardController {
 		return "contentModify";
 	}
 	
-	
+	@RequestMapping(value = "/content_delete")
+	public String content_delete(HttpServletRequest request, Model model) {
+		
+		String bnum = request.getParameter("bnum");
+		
+		BoardDao dao = sqlSession.getMapper(BoardDao.class);
+		
+		dao.deleteDao(bnum);
+		
+		return "redirect:list";
+	}
 	
 	
 	
