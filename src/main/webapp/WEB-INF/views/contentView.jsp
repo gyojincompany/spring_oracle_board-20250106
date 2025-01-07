@@ -17,7 +17,7 @@
 	조회수 : ${boardDto.bhit}<br><br>
 	<hr>
 	<input type="button" value="수정" onclick="javascript:location.href='content_modify?bnum=${boardDto.bnum}'">
-	<input type="button" value="삭제">
+	<input type="button" value="삭제" onclick="javascript:location.href='content_delete?bnum=${boardDto.bnum}'">
 	<input type="button" value="글목록" onclick="javascript:location.href='list'"> 
 </body>
 </html>

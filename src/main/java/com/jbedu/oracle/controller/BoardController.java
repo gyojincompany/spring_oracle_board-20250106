@@ -79,6 +79,8 @@ public class BoardController {
 		
 		BoardDao dao = sqlSession.getMapper(BoardDao.class);
 		
+		dao.uphitDao(bnum); // 조회수 1 증가
+		
 		BoardDto bDto = dao.contentDao(bnum); //글 1개 반환
 		
 		if(bDto == null) { //글 삭제되거나 없는 글 번호

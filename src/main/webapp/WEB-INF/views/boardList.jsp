@@ -17,6 +17,7 @@
 			<th>작성자</th>
 			<th>등록일</th>
 			<th>조회수</th>
+			<th>삭제</th>
 		</tr>
 		<c:forEach items="${boardList}" var="boardDto">
 		<tr>
@@ -25,10 +26,11 @@
 			<td>${boardDto.bid}</td>
 			<td>${boardDto.bdate}</td>
 			<td>${boardDto.bhit}</td>
+			<td><input type="button" value="삭제" onclick="javascript:location.href='content_delete?bnum=${boardDto.bnum}'"></td>
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="5">
+			<td colspan="6">
 				<input type="button" value="글쓰기" onclick="javascript:location.href='write_form'">
 			</td>
 		</tr>
